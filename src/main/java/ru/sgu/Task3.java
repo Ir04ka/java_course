@@ -6,10 +6,13 @@ import static java.lang.Character.toUpperCase;
 
 public class Task3 {
 
+    public final static String PATH_TO_INPUT_FILE = "data/input.txt";
+    public final static String PATH_TO_OUTPUT_FILE = "data/output.txt";
+
     public static void main(String[] args) {
         try {
-            BufferedReader reader = new BufferedReader(new FileReader("src/input.txt"));
-            FileWriter writer = new FileWriter("src/output.txt");
+            BufferedReader reader = new BufferedReader(new FileReader(PATH_TO_INPUT_FILE));
+            FileWriter writer = new FileWriter(PATH_TO_OUTPUT_FILE);
 
             String line;
             while ((line = reader.readLine()) != null) {
