@@ -88,11 +88,7 @@ public class Task2 {
 
         BigDecimal result = calculate(num1, num2, operation);
         if (result != null) {
-            if (operation.equals(OperationType.POW)) {
-                System.out.println("Результат: " + result);
-            } else {
                 System.out.println("Результат: " + result.setScale(15, BigDecimal.ROUND_HALF_UP));
-            }
         }
     }
 }
