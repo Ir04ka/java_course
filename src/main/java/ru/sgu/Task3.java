@@ -11,6 +11,12 @@ public class Task3 {
         long durationStringBuilder = endTimeStringBuilder - startTimeStringBuilder;
         System.out.println("Время с использованием StringBuilder: " + durationStringBuilder + " наносекунд");
 
+        long startTimeStringBuffer = System.nanoTime();
+        stringBufferConcatenation();
+        long endTimeStringBuffer = System.nanoTime();
+        long durationStringBuffer = endTimeStringBuffer - startTimeStringBuffer;
+        System.out.println("Время с использованием StringBuffer: " + durationStringBuffer + " наносекунд");
+
         long startTimeStringConcatenation = System.nanoTime();
         stringConcatenation();
         long endTimeStringConcatenation = System.nanoTime();
@@ -22,6 +28,13 @@ public class Task3 {
         StringBuilder stringBuilder = new StringBuilder();
         for (int i = 0; i < 100000; i++) {
             stringBuilder.append(generateRandomString());
+        }
+    }
+
+    public static void stringBufferConcatenation() {
+        StringBuffer stringBuffer = new StringBuffer();
+        for (int i = 0; i < 100000; i++) {
+            stringBuffer.append(generateRandomString());
         }
     }
 
