@@ -8,6 +8,12 @@ public class Task2 {
     private static final String TARGET_STRING = "day";
 
     public static void main(String[] args) {
+        Task2 task2 = new Task2();
+
+        task2.run();
+    }
+
+    void run() {
         try {
             Path directory = Paths.get(DIRECTORY_PATH);
             if (!Files.exists(directory) || !Files.isDirectory(directory)) {
@@ -21,7 +27,7 @@ public class Task2 {
         }
     }
 
-    private static void processDirectory(Path directory, String targetString) throws IOException {
+    private void processDirectory(Path directory, String targetString) throws IOException {
         try (DirectoryStream<Path> stream = Files.newDirectoryStream(directory)) {
             for (Path path : stream) {
                 if (Files.isDirectory(path)) {
@@ -35,7 +41,7 @@ public class Task2 {
         }
     }
 
-    private static void zipFile(Path filePath, String zipFileName) throws IOException {
+    private void zipFile(Path filePath, String zipFileName) throws IOException {
         try (FileInputStream fis = new FileInputStream(filePath.toFile());
              BufferedInputStream bis = new BufferedInputStream(fis);
              FileOutputStream fos = new FileOutputStream(zipFileName);
